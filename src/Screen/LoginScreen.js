@@ -51,7 +51,7 @@ class LoginScreen extends Component {
                     autoCorrect={false}
                     secureTextEntry
                     inputContainerStyle={containerStyle}
-                    style={{ marginBottom: 30 }}
+                    style={{ marginBottom: 30, height: 30 }}
                     inputStyle={inputStyle}
                     leftIcon={{ type: 'font-awesome', name: 'lock', color: '#FFF' }}
                     placeholderTextColor='#FFF'
@@ -94,10 +94,12 @@ const style = {
     inputStyle: {
         color: '#FFF',
         marginLeft: 10,
-        fontFamily: Fonts.TextReg
+        fontFamily: Fonts.TextReg,
+        fontSize: 16
     },
     containerStyle: {
         marginVertical: 10,
+        height: 35
       
     },
     buttonStyle: {
