@@ -45,8 +45,13 @@ class CourseItem extends Component {
                 };
         return (
             <TouchableWithoutFeedback
+<<<<<<< HEAD
                 delayPressIn={50}
                 delatPressOut={50}
+=======
+                delayPressIn={100}
+                delatPressOut={100}
+>>>>>>> 2a82f8c6c36aed4abc3fc08d03fd0882df7943b1
                 onPressIn={() => this.onPressIn()}
                 onPressOut={() => this.onPressOut({ name, id })}
             >
