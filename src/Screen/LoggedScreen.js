@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text, View, Button } from 'react-native';
 import { Fonts } from '../constants';
-import { Button } from "react-native-elements";
 
 class LoginScreen extends Component {
     loggingOut() {
@@ -24,8 +23,6 @@ class LoginScreen extends Component {
                 <Text style={textStyle}>{user}</Text>
                 <Button
                     title='Log-Out'
-                    buttonStyle={{ marginTop: 5, backgroundColor: '#C2083C' }}
-                    containerStyle={{ width: '100%', paddingHorizontal: 10 }}
                     titleStyle={{ fontFamily: Fonts.TextReg }}
                     onPress={() => this.loggingOut()}
                 />

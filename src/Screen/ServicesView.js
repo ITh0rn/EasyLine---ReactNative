@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StatusBar } from 'react-native';
+import { View, StatusBar, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
 import ServicesList from '../components/ServicesList';
 
@@ -13,13 +13,14 @@ class ServicesView extends Component {
                         backgroundColor="#901100"
                         barStyle="light-content"
                     />
+                    <TouchableOpacity onPress={() => navigation.openDrawer()}>
                     <Icon
                         name='bars'
                         type='font-awesome'
                         color='#FFF'
                         size={20}
-                        onPress={() => navigation.openDrawer()}
                     />
+                    </TouchableOpacity>
                 </View>
             )
         };

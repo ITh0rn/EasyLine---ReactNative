@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import AreaView from './Screen/AreaView';
 import CourseView from './Screen/CourseView';
 import ServicesView from './Screen/ServicesView';
+import TicketView from './Screen/TicketView';
 import { Fonts } from './constants';
 import DrawerContainer from './containers/DrawerContainer';
 import { store, persistor } from './Store';
@@ -48,11 +49,7 @@ const RootStack = createStackNavigator({
         screen: AreaView,
         navigationOptions: () => ({
             title: 'UNIVERSITA\' DELL\'AQUILA',
-            headerStyle: {
-                backgroundColor: '#901100',
-                height: 95,
-                headerLayoutPreset: 'center'
-            },
+            headerStyle: HeaderStyle,
             headerTintColor: 'white',
             headerTitleStyle: {
                 fontFamily: Fonts.TextReg,
@@ -81,6 +78,24 @@ const RootStack = createStackNavigator({
         screen: ServicesView,
         navigationOptions: () => ({
             headerStyle: HeaderStyle,
+            headerTintColor: 'white',
+            headerTitleStyle: {
+                fontFamily: Fonts.TextReg,
+                fontWeight: '200',
+                color: '#fff',
+                fontSize: 15,
+                paddingTop: 60
+            }
+        })
+    },
+    Ticket: {
+        screen: TicketView,
+        navigationOptions: () => ({
+            headerStyle: {
+                ...HeaderStyle,
+                backgroundColor: '#3b7600'
+
+            },
             headerTintColor: 'white',
             headerTitleStyle: {
                 fontFamily: Fonts.TextReg,

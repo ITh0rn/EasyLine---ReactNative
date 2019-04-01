@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Image, Text, View } from 'react-native';
-import { Button, Input } from 'react-native-elements';
+import { Image, Text, View, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { Input } from 'react-native-elements';
 import { Fonts } from '../constants';
 
 class LoginScreen extends Component {
@@ -51,24 +51,19 @@ class LoginScreen extends Component {
                     autoCorrect={false}
                     secureTextEntry
                     inputContainerStyle={containerStyle}
-<<<<<<< HEAD
-                    style={{ marginBottom: 30 }}
-=======
                     style={{ marginBottom: 30, height: 30 }}
->>>>>>> 2a82f8c6c36aed4abc3fc08d03fd0882df7943b1
                     inputStyle={inputStyle}
                     leftIcon={{ type: 'font-awesome', name: 'lock', color: '#FFF' }}
                     placeholderTextColor='#FFF'
                     onChangeText={(value) => this.changeValueText('password', value)}
                 />
                 <Text style={{ color: '#FFF', width: 220, fontFamily: Fonts.TextReg }}>{error}</Text>
-                <Button
-                    title='Accedi'
-                    buttonStyle={buttonStyle}
-                    loading={isLoading}
-                    titleStyle={{ fontFamily: Fonts.TextReg }}
-                    onPress={() => this.login()}
-                />
+                {isLoading && <ActivityIndicator color='white' />}
+                <TouchableOpacity onPress={() => this.login()} style={{ width: '80%' }}>
+                  <View style={buttonStyle}>
+                    <Text style={{ color: 'white', fontFamily: Fonts.TextReg, fontSize: 15 }}>ACCEDI</Text>
+                  </View>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -89,34 +84,32 @@ const style = {
         paddingBottom: 20,
         width: 200,
         marginTop: 20,
-        fontFamily: Fonts.TextReg
+        fontFamily: Fonts.TextReg,
+        textAlign: 'center'
     },
     imgStyle: {
         width: 100,
         height: 100
     },
     inputStyle: {
-        color: '#FFF',
+        color: 'white',
         marginLeft: 10,
-<<<<<<< HEAD
-        fontFamily: Fonts.TextReg
-    },
-    containerStyle: {
-        marginVertical: 10,
-=======
         fontFamily: Fonts.TextReg,
         fontSize: 16
     },
     containerStyle: {
         marginVertical: 10,
-        height: 35
->>>>>>> 2a82f8c6c36aed4abc3fc08d03fd0882df7943b1
-      
     },
     buttonStyle: {
-        backgroundColor: '#C2083C',
-        height: 40,
-        width: 265
+        height: 35,
+        width: '100%',
+        marginTop: 10,
+        backgroundColor: '#cc0000',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        borderWidth: 0.8,
+        borderColor: '#b30000'
     }
 };
 

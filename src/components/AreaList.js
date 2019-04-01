@@ -21,7 +21,7 @@ export default class AreaList extends Component {
                 }
             })
             .then((response) => {
-                this.setState({ data: response.data, isLoading: false});
+                this.setState({ data: response.data, isLoading: false });
             })
             .catch((err) => {
                 console.log(err);
@@ -36,6 +36,7 @@ export default class AreaList extends Component {
 
         renderItem({ item }) {
         return (
+
             <AreaItem item={item} />
         );
         }

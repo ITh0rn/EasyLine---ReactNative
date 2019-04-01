@@ -1,25 +1,10 @@
 import React, { Component } from 'react';
-import { View, TouchableWithoutFeedback, Text } from 'react-native';
+import { View, TouchableHighlight, Text } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import { Fonts } from '../constants';
 
 class AreaItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selected: 0,
-        };
-    }
-
-    onPress({ name, id }) {
-      this.setState({ selected: 0 });
-      this.props.navigation.navigate('ListaCorsi', {
-          title: name,
-          providid: id
-      });
-    }
-
     onPressOut({ name, id }) {
         this.setState({ selected: 0 });
         this.props.navigation.navigate('ListaCorsi', {
@@ -37,23 +22,13 @@ class AreaItem extends Component {
             containerItemStyle,
             iconStyle
         } = styles;
-        const styleselected =
-            this.state.selected ?
-                {
-                    ...containerStyle,
-                    ...containerStyle.selected
-                } :
-                {
-                   ...containerStyle,
-                   ...containerStyle.notSelected
-                };
         return (
-            <TouchableWithoutFeedback
-            delayPressIn={50}
-            onPress={() => this.onPress({ name, id })}
-            //onPressOut={() => this.onPressOut({ name, id })}
-            >
-                <View style={styleselected}>
+          <TouchableHighlight
+              activeOpacity={0.85}
+              underlayColor={'#6F6F6F'}
+              onPressOut={() => this.onPressOut({ name, id })}
+          >
+                <View style={containerStyle}>
                     <View style={containerItemStyle}>
                         <Icon
                             raised
@@ -74,7 +49,7 @@ class AreaItem extends Component {
                         </View>
                     </View>
                 </View>
-            </TouchableWithoutFeedback>
+            </TouchableHighlight>
         );
     }
 }
@@ -83,12 +58,7 @@ const styles = {
     containerStyle: {
         borderWidth: 1.5,
         borderColor: '#e9e9e9',
-        notSelected: {
-            backgroundColor: 'white'
-        },
-        selected: {
-            backgroundColor: '#e7e7e7'
-        }
+        backgroundColor: 'white'
     },
     containerItemStyle: {
         flex: 1,

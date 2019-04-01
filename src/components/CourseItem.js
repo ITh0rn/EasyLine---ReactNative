@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
-import { View, TouchableWithoutFeedback, Text } from 'react-native';
+import { View, TouchableHighlight, Text } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import { Fonts } from '../constants';
 
 class CourseItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selected: 0
-        };
-    }
-
     onPressOut({ name, id }) {
       this.setState({ selected: 0 });
       this.props.navigation.navigate('Services', {
@@ -20,11 +13,7 @@ class CourseItem extends Component {
       });
     }
 
-    onPressIn() {
-        this.setState({ selected: 1 });
-    }
-
-    render() {
+render() {
         const { item } = this.props;
         const { name, id } = item;
         const {
@@ -33,29 +22,13 @@ class CourseItem extends Component {
             containerItemStyle,
             iconStyle,
         } = styles;
-        const styleselected =
-            this.state.selected ?
-                {
-                    ...containerStyle,
-                    ...containerStyle.selected
-                } :
-                {
-                    ...containerStyle,
-                    ...containerStyle.notSelected
-                };
         return (
-            <TouchableWithoutFeedback
-<<<<<<< HEAD
-                delayPressIn={50}
-                delatPressOut={50}
-=======
-                delayPressIn={100}
-                delatPressOut={100}
->>>>>>> 2a82f8c6c36aed4abc3fc08d03fd0882df7943b1
-                onPressIn={() => this.onPressIn()}
+            <TouchableHighlight
+                activeOpacity={0.85}
+                underlayColor={'#6F6F6F'}
                 onPressOut={() => this.onPressOut({ name, id })}
             >
-                <View style={styleselected}>
+                <View style={containerStyle}>
                     <View style={containerItemStyle}>
                         <Icon
                             raised
@@ -76,7 +49,7 @@ class CourseItem extends Component {
                         </View>
                     </View>
                 </View>
-            </TouchableWithoutFeedback>
+            </TouchableHighlight>
         );
     }
 }
@@ -85,12 +58,7 @@ const styles = {
     containerStyle: {
         borderWidth: 1.5,
         borderColor: '#e9e9e9',
-        notSelected: {
-            backgroundColor: 'white'
-        },
-        selected: {
-            backgroundColor: '#e7e7e7'
-        }
+        backgroundColor: 'white'
     },
     containerItemStyle: {
         flex: 1,
