@@ -65,7 +65,7 @@ class TicketView extends Component {
                       name='ticket'
                       type='font-awesome'
                       color='white'
-                      size={20}
+                      size={25}
                       />
                     <Text style={text}>PRENOTA</Text>
                   </View>
@@ -101,11 +101,11 @@ const styles = {
         marginTop: 10,
     },
     buttonStylebtn: {
-      backgroundColor: '#ededed',
-      height: 50,
-      width: '100%',
-      alignItems: 'center',
-      justifyContent: 'center'
+        backgroundColor: '#ededed',
+        height: 50,
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     buttonBottomStyle: {
         position: 'absolute',
@@ -122,41 +122,41 @@ const styles = {
         flexDirection: 'row'
     },
     ticketTrinagle: {
-      width: 0,
-      height: 0,
-      backgroundColor: 'transparent',
-      borderStyle: 'solid',
-      borderLeftWidth: 120,
-      borderRightWidth: 120,
-      borderBottomWidth: 20,
-      borderLeftColor: 'transparent',
-      borderRightColor: 'transparent',
-      borderBottomColor: 'white',
-      transform: [
-        { rotate: '180deg' }
-      ]
+        width: 0,
+        height: 0,
+        backgroundColor: 'transparent',
+        borderStyle: 'solid',
+        borderLeftWidth: 120,
+        borderRightWidth: 120,
+        borderBottomWidth: 20,
+        borderLeftColor: 'transparent',
+        borderRightColor: 'transparent',
+        borderBottomColor: 'white',
+        transform: [
+          { rotate: '180deg' }
+        ]
     },
     ticketSquare: {
-      maxHeight: 220,
-      width: 240,
-      flex: 1,
-      flexDirection: 'column',
-      alignItems: 'center',
-      backgroundColor: 'white',
-      borderBottomWidth: 0,
+        maxHeight: 220,
+        width: 240,
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        borderBottomWidth: 0,
     },
     ticketHeader: {
-      height: 20,
-      width: 240,
-      backgroundColor: '#3b7600',
-      marginTop: 20
+        height: 20,
+        width: 240,
+        backgroundColor: '#3b7600',
+        marginTop: 20
     },
     squareText: {
-      color: '#3b7600',
-      fontSize: 18,
-      fontFamily: Fonts.TextBold,
-      marginTop: 15,
-      textAlign: 'center'
+        color: '#3b7600',
+        fontSize: 18,
+        fontFamily: Fonts.TextBold,
+        marginTop: 15,
+        textAlign: 'center'
     }
 };
 
