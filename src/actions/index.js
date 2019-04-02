@@ -4,7 +4,8 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGIN_FETCH,
-    LOGOUT
+    LOGOUT,
+    SETTED_PROVIDER
 } from '../constants';
 import { getLoginFS } from "../selectors";
 
@@ -54,4 +55,11 @@ const logout = () => ({
     type: LOGOUT
 });
 
-export { loginParamChange, loginFetch, login, logout };
+const setProvider = (value) => ({
+    type: SETTED_PROVIDER,
+    payload: {
+        value
+    }
+})
+
+export { loginParamChange, loginFetch, login, logout, setProvider };

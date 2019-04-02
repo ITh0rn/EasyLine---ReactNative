@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { FlatList, ActivityIndicator } from 'react-native';
-import axios from 'axios';
 import AreaItem from './AreaItem';
+import { getAreaList } from '../api';
+import AreaContainer from '../containers/AreaContainer';
 
 export default class AreaList extends Component {
         constructor(props) {
@@ -13,18 +14,9 @@ export default class AreaList extends Component {
         }
 
         componentDidMount() {
-            const formdata = new FormData();
-            formdata.append('id', 1);
-            axios.post('http://test.easyline.univaq.it/api/v1/providers', formdata, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                }
-            })
+            getAreaList()
             .then((response) => {
-                this.setState({ data: response.data, isLoading: false });
-            })
-            .catch((err) => {
-                console.log(err);
+                this.setState({ data: response, isLoading: false });
             });
         }
 
@@ -37,7 +29,7 @@ export default class AreaList extends Component {
         renderItem({ item }) {
         return (
 
-            <AreaItem item={item} />
+            <AreaContainer item={item} />
         );
         }
 

@@ -1,6 +1,6 @@
 import { getUserLog } from '../selectors';
 import { connect } from 'react-redux';
-import LoggedScreen from '../Screen/LoggedScreen';
+import LoggedScreen from '../screen/LoggedScreen';
 import { login, loginFetch, loginParamChange, logout } from "../actions";
 
 const mapStateToProps = (state) => {

@@ -11,6 +11,8 @@ class AreaItem extends Component {
             title: name,
             providid: id
         });
+        const { setProvider } = this.props;
+        setProvider(id);
     }
 
     render() {

@@ -1,6 +1,6 @@
 import { getDrawerPg } from '../selectors';
 import { connect } from 'react-redux';
-import DrawerView from '../Screen/DrawerView';
+import DrawerView from '../screen/DrawerView';
 
 const mapStateToProps = (state) => {
     const currentDrawerPage = getDrawerPg(state);

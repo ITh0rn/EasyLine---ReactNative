@@ -1,7 +1,7 @@
 import { getLoginFS, getDrawerPg, getUserLog } from '../selectors';
 import { login, loginFetch, loginParamChange } from '../actions';
 import { connect } from 'react-redux';
-import LoginScreen from '../Screen/LoginScreen';
+import LoginScreen from '../screen/LoginScreen';
 
 const mapStateToProps = (state) => {
     const {

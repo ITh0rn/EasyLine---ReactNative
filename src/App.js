@@ -3,10 +3,10 @@ import { createAppContainer, createStackNavigator, createDrawerNavigator, Dimens
 import firebase from 'firebase';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
-import AreaView from './Screen/AreaView';
-import CourseView from './Screen/CourseView';
-import ServicesView from './Screen/ServicesView';
-import TicketView from './Screen/TicketView';
+import AreaView from './screen/AreaView';
+import CourseView from './screen/CourseView';
+import ServicesView from './screen/ServicesView';
+import TicketView from './screen/TicketView';
 import { Fonts } from './constants';
 import DrawerContainer from './containers/DrawerContainer';
 import { store, persistor } from './Store';

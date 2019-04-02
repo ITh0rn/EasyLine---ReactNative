@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { SectionList, ActivityIndicator, View, Text } from 'react-native';
-import axios from 'axios';
 import CourseItem from './CourseItem';
 import { Fonts } from '../constants/index';
+import { getCourseList } from '../api';
 
 
 export default class CourseList extends Component {
@@ -16,20 +16,10 @@ export default class CourseList extends Component {
 
     componentDidMount() {
         const { id } = this.props;
-        const formdata = new FormData();
-        formdata.append('provid', id);
-        formdata.append('id', '');
-        axios.post('http://test.easyline.univaq.it/api/v1/services', formdata, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            }
-        })
+        getCourseList(id)
             .then((response) => {
-                this.setState((state, props) => ({ data: response.data, isLoading: false, headerLab: state.headerLab + props.headerLab }));
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+            this.setState((state, props) => ({ data: response, isLoading: false, headerLab: state.headerLab + props.headerLab }));
+        });
     }
 
     keyExtractor(item) {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FlatList, ActivityIndicator } from 'react-native';
-import axios from 'axios';
 import ServiceItem from './ServiceItem';
+import { getServicesList } from '../api';
 
 export default class AreaList extends Component {
     constructor(props) {
@@ -13,22 +13,10 @@ export default class AreaList extends Component {
     }
 
     componentDidMount() {
-        const formdata = new FormData();
         const { courseid } = this.props;
-        console.log(courseid);
-        formdata.append('id', courseid);
-        formdata.append('provid', 1);
-        axios.post('http://test.easyline.univaq.it/api/v1/services', formdata, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            }
-        })
-            .then((response) => {
+        getServicesList(courseid).then((response) => {
                 this.setState({ data: response.data, isLoading: false });
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        });
     }
 
     getNavigationParams() {
