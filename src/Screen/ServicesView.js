@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StatusBar, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
-import ServicesList from '../components/ServicesList';
+import ServicesContainer from '../containers/ServicesContainer';
 
 class ServicesView extends Component {
     static navigationOptions = ({ navigation }) => {
@@ -31,7 +31,7 @@ class ServicesView extends Component {
         const id = navigation.getParam('corsoID');
         return (
             <View style={container}>
-                <ServicesList courseid={id} />
+                <ServicesContainer courseid={id} />
             </View>
         );
     }

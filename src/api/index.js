@@ -33,10 +33,10 @@ export const getCourseList = (id) => {
      });
 };
 
-export const getServicesList = (courseid) => {
+export const getServicesList = (courseid, currProvider) => {
     const formdata = new FormData();
     formdata.append('id', courseid);
-    formdata.append('provid', 1); //Questo andrà passato ma presso dallo store
+    formdata.append('provid', currProvider); //Questo andrà passato ma presso dallo store
     const URL = 'http://test.easyline.univaq.it/api/v1/services';
     return axios.post(URL, formdata, {
         headers: {

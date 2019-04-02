@@ -11,6 +11,8 @@ class CourseItem extends Component {
           title: name,
           corsoID: id
       });
+      const { setcourse } = this.props;
+      setcourse(id);
     }
 
 render() {

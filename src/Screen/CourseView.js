@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import AreaList from '../components/AreaList';
 import CourseList from "../components/CourseList";
-import {Icon} from "react-native-elements";
+import { Icon } from "react-native-elements";
 
 class CourseView extends Component {
     static navigationOptions = ({ navigation }) => {

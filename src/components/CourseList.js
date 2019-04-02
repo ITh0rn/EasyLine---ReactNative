@@ -3,6 +3,7 @@ import { SectionList, ActivityIndicator, View, Text } from 'react-native';
 import CourseItem from './CourseItem';
 import { Fonts } from '../constants/index';
 import { getCourseList } from '../api';
+import CourseContainer from '../containers/CourseContainer';
 
 
 export default class CourseList extends Component {
@@ -16,8 +17,7 @@ export default class CourseList extends Component {
 
     componentDidMount() {
         const { id } = this.props;
-        getCourseList(id)
-            .then((response) => {
+        getCourseList(id).then((response) => {
             this.setState((state, props) => ({ data: response, isLoading: false, headerLab: state.headerLab + props.headerLab }));
         });
     }
@@ -28,7 +28,7 @@ export default class CourseList extends Component {
 
     renderItem({ item }) {
             return (
-                <CourseItem item={item} />
+                <CourseContainer item={item} />
             );
     }
 

@@ -13,8 +13,10 @@ export default class AreaList extends Component {
     }
 
     componentDidMount() {
+        const { currProvider } = this.props;
+        const { id } = currProvider;
         const { courseid } = this.props;
-        getServicesList(courseid).then((response) => {
+        getServicesList(courseid, id).then((response) => {
                 this.setState({ data: response.data, isLoading: false });
         });
     }
