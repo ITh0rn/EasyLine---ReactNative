@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FlatList, ActivityIndicator } from 'react-native';
-import AreaItem from './AreaItem';
 import { getAreaList } from '../api';
 import AreaContainer from '../containers/AreaContainer';
 

@@ -56,7 +56,7 @@ class TicketView extends Component {
                 </View>
                 <TouchableOpacity style={buttonStyle}>
                   <View style={buttonStylebtn}>
-                    <Text style={{ color: 'black', fontFamily: Fonts.TextReg }}>DETTAGLI UFFICIO</Text>
+                    <Text style={{ color: 'black', fontFamily: Fonts.TextBold }}>DETTAGLI UFFICIO</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={buttonBottomStyle}>
