@@ -12,7 +12,7 @@ import DrawerContainer from './containers/DrawerContainer';
 import { store, persistor } from './Store';
 
 export default class App extends Component {
-    render() {git
+    render() {
         const config = {
             apiKey: 'AIzaSyCcPoPrz919FJWLSr4pxdqjOjUCFbtS6b8',
             authDomain: 'apilogin-210dd.firebaseapp.com',
