@@ -50,15 +50,17 @@ class TicketView extends Component {
             ticketHeader,
             squareText
           } = styles;
+        const { navigation } = this.props;
+        const colore = navigation.getParam('colore');
         return (
             <View style={container}>
                 <View style={ticketArea}>
                     <Text style={{ color: '#ff9900', fontFamily: Fonts.TextBold, fontSize: 15, maxWidth: '80%', marginTop: 15, textAlign: 'center' }}>
                       Servizio non disponibile. Non è possibile prenotare ticket prechè l'ufficio è chiuso
                     </Text>
-                    <View style={ticketHeader} />
+                    <View style={{ ...ticketHeader, backgroundColor: colore }} />
                     <View style={ticketSquare}>
-                      <Text style={squareText}>SEGRETERIA STUDENTI ECONOMIA</Text>
+                      <Text style={{ ...squareText, color: colore }}>SEGRETERIA STUDENTI ECONOMIA</Text>
                     </View>
                     <View style={ticketTrinagle} />
                 </View>
@@ -68,7 +70,7 @@ class TicketView extends Component {
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={buttonBottomStyle}>
-                  <View style={buttonBottomStylebtn}>
+                  <View style={{ ...buttonBottomStylebtn, backgroundColor: colore }}>
                       <Icon
                       name='ticket'
                       type='font-awesome'
