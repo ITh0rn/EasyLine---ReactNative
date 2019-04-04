@@ -13,7 +13,8 @@ const INITIAL_STATE = {
         id: ''
     },
     service: {
-        id: ''
+        id: '',
+        color: 'blue'
     }
 
 };
@@ -50,4 +51,3 @@ const ServiceReducer = (state = INITIAL_STATE, action) => {
 };
 
 export default ServiceReducer;
-

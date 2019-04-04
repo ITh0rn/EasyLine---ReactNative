@@ -1,14 +1,6 @@
-import React from 'react';
-
-class Area {
-  name: string;
-  areaID: int;
-
-  constructor(name, id) {
-    this.name = name;
-    this.areaID = id;
-    console.log(this.name);
-  }
-}
-
-module.exports = Area;
+export const Area = (name, id) => {
+  this.name = name;
+  this.idArea = id;
+  this.getID = () => this.idArea;
+  console.log(this.name);
+};

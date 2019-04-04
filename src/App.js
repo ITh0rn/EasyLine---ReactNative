@@ -89,22 +89,7 @@ const RootStack = createStackNavigator({
         })
     },
     Ticket: {
-        screen: TicketView,
-        navigationOptions: () => ({
-            headerStyle: {
-                ...HeaderStyle,
-                backgroundColor: Colors.green
-
-            },
-            headerTintColor: 'white',
-            headerTitleStyle: {
-                fontFamily: Fonts.TextReg,
-                fontWeight: '200',
-                color: Colors.white,
-                fontSize: 15,
-                paddingTop: 60
-            }
-        })
+        screen: TicketView
     }
 }, StackNavigatorConfig);
 

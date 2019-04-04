@@ -48,4 +48,3 @@ export const getServicesList = (courseid, currProvider) => {
         console.log(err);
     });
 };
-

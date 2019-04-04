@@ -40,18 +40,20 @@ export default class CourseList extends Component {
     }
 
     render() {
-        return (
-            this.state.isLoading
-                ?
-                <ActivityIndicator size='large' color='#FF0000' animating />
-                :
-                <SectionList
-                    sections={[{ title: 'LAUREA TRIENNALE', data: this.state.data.filter(e => e.type_label === 'LAUREA TRIENNALE') },
-                    { title: 'LAUREA MAGISTRALE', data: this.state.data.filter(e => e.type_label === 'LAUREA MAGISTRALE') }]}
-                    keyExtractor={this.keyExtractor}
-                    renderItem={this.renderItem}
-                    renderSectionHeader={this.renderSectionHeader}
-                />
-        );
-    }
+      return (
+          this.state.isLoading
+              ?
+              <ActivityIndicator size='large' color='#FF0000' animating />
+              :
+              <SectionList
+                  sections={[
+                    { title: 'LAUREA TRIENNALE', data: this.state.data.filter(e => e.type_label === 'LAUREA TRIENNALE') },
+                    { title: 'LAUREA MAGISTRALE', data: this.state.data.filter(e => e.type_label === 'LAUREA MAGISTRALE') }
+                  ]}
+                  keyExtractor={this.keyExtractor}
+                  renderItem={this.renderItem}
+                  renderSectionHeader={this.renderSectionHeader}
+              />
+      );
+  }
 }

@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
 import { View, StatusBar, TouchableOpacity } from 'react-native';
 import { Icon, Text } from 'react-native-elements';
-import { Fonts } from '../constants';
+import { Fonts, Colors } from '../constants';
 
 class TicketView extends Component {
     static navigationOptions = ({ navigation }) => ({
             title: 'SEGRETERIA',
             headerStyle: {
-                backgroundColor: '#3b7600',
-                height: 95,
-                headerLayoutPreset: 'center'
-                },
+              height: 95,
+              headerLayoutPreset: 'center',
+              backgroundColor: navigation.getParam('colore')
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+                fontFamily: Fonts.TextReg,
+                fontWeight: '200',
+                color: Colors.white,
+                fontSize: 15,
+                paddingTop: 60
+            },
             headerRight: (
                 <View style={{ paddingRight: 20 }}>
                     <StatusBar
-                        backgroundColor="#3b7600"
+                        backgroundColor={navigation.getParam('colore')}
                         barStyle="light-content"
                     />
                     <TouchableOpacity onPress={() => navigation.openDrawer()}>

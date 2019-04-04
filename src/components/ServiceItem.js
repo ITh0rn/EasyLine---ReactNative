@@ -5,9 +5,10 @@ import { Icon } from 'react-native-elements';
 import { Fonts } from '../constants';
 
 class AreaItem extends Component {
-onPressOut() {
+onPressOut(color) {
         this.setState({ selected: 0 });
         this.props.navigation.navigate('Ticket', {
+          colore: color
         });
     }
 
@@ -24,7 +25,7 @@ onPressOut() {
           <TouchableHighlight
               activeOpacity={0.85}
               underlayColor={'#6F6F6F'}
-              onPressOut={() => this.onPressOut()}
+              onPressOut={() => this.onPressOut(color)}
           >
                 <View style={containerStyle}>
                     <View style={containerItemStyle}>
