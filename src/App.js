@@ -56,7 +56,7 @@ const RootStack = createStackNavigator({
                 fontWeight: '200',
                 color: Colors.white,
                 fontSize: 20,
-                paddingTop: 60
+                paddingTop: 30
             }
         })
     },
@@ -70,7 +70,7 @@ const RootStack = createStackNavigator({
                 fontWeight: '200',
                 color: Colors.white,
                 fontSize: 15,
-                paddingTop: 60
+                paddingTop: 20
             }
         })
     },
@@ -84,25 +84,24 @@ const RootStack = createStackNavigator({
                 fontWeight: '200',
                 color: Colors.white,
                 fontSize: 15,
-                paddingTop: 60
+                paddingTop: 20
             }
         })
     },
     Ticket: {
-        screen: TicketView
+        screen: TicketView,
     }
 }, StackNavigatorConfig);
 
 const Drawer = createDrawerNavigator({
     Servizi: {
         screen: RootStack
-    },
-
+    }
 }, DrawerNavigatorConfig);
 
 const HeaderStyle = {
     backgroundColor: Colors.red,
-    height: 95,
+    height: 70,
     headerLayoutPreset: 'center'
 };
 

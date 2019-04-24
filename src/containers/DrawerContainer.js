@@ -1,5 +1,5 @@
-import { getDrawerPg } from '../selectors';
 import { connect } from 'react-redux';
+import { getDrawerPg } from '../selectors';
 import DrawerView from '../screen/DrawerView';
 
 const mapStateToProps = (state) => {

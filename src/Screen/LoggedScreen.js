@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Image, Text, View, Button } from 'react-native';
-import { Fonts } from '../constants';
+import { Image, Text, View, TouchableOpacity } from 'react-native';
+import { Fonts, Colors } from '../constants';
 
 class LoginScreen extends Component {
     loggingOut() {
@@ -9,23 +9,25 @@ class LoginScreen extends Component {
     }
 
     render() {
-        const { drawerStyle, textStyle, imgStyle } = style;
+        const { drawerStyle, textStyle, imgStyle, topDrawerHeader, buttonStyle } = style;
         const { user } = this.props;
         const url = 'https://pbs.twimg.com/profile_images/844881776/logo-univaq_400x400.png';
         return (
             <View style={drawerStyle}>
-                <View style={{ paddingTop: 40 }}>
+                <View style={topDrawerHeader}>
                     <Image
                         style={imgStyle}
                         source={{ uri: url }}
                     />
+                    <Text style={textStyle}>{user}</Text>
                 </View>
-                <Text style={textStyle}>{user}</Text>
-                <Button
-                    title='Log-Out'
-                    titleStyle={{ fontFamily: Fonts.TextReg }}
-                    onPress={() => this.loggingOut()}
-                />
+                <View style={{ backgroundColor: Colors.white, height: '75%', flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+                  <TouchableOpacity onPress={() => this.loggingOut()} style={{ width: '70%', position: 'absolute', bottom: 10 }}>
+                    <View style={buttonStyle}>
+                      <Text style={{ color: 'white', fontFamily: Fonts.TextReg, fontSize: 15 }}>LOGOUT</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
             </View>
         );
     }
@@ -36,30 +38,42 @@ const style = {
         flex: 1,
         height: '100%',
         width: '100%',
-        backgroundColor: '#901100',
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingHorizontal: 5
+        flexDirection: 'column'
     },
     textStyle: {
-        color: '#e9e9e9',
+        color: Colors.white,
         paddingBottom: 20,
         width: 200,
         marginTop: 20,
         fontFamily: Fonts.TextReg,
-        fontSize: 20
+        fontSize: 20,
+        textAlign: 'center'
     },
     imgStyle: {
         width: 100,
         height: 100
     },
-    inputStyle: {
-        color: '#FFF',
-        marginLeft: 10,
-        fontFamily: Fonts.TextReg
+    topDrawerHeader: {
+        maxHeight: '25%',
+        backgroundColor: Colors.red,
+        paddingTop: 40,
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderBottomWidth: 0.5,
+        borderColor: Colors.black
     },
-    containerStyle: {
-        marginVertical: 10,
+    buttonStyle: {
+        height: 35,
+        width: '100%',
+        marginTop: 10,
+        backgroundColor: '#cc0000',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        borderWidth: 0.8,
+        borderColor: '#b30000'
     }
 };
 

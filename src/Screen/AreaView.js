@@ -8,18 +8,18 @@ class AreaView extends Component {
         return {
             headerRight: (
                 <View style={{ paddingRight: 20 }}>
-                <StatusBar
-                    backgroundColor="#901100"
-                    barStyle="light-content"
-                />
-                <TouchableOpacity onPress={() => navigation.openDrawer()}>
-                <Icon
-                    name='bars'
-                    type='font-awesome'
-                    color='#FFF'
-                    size={20}
-                />
-                </TouchableOpacity>
+                  <StatusBar
+                      backgroundColor="#901100"
+                      barStyle="light-content"
+                  />
+                  <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                    <Icon
+                      name='bars'
+                      type='font-awesome'
+                      color='#FFF'
+                      size={20}
+                    />
+                  </TouchableOpacity>
                 </View>
             )
         };

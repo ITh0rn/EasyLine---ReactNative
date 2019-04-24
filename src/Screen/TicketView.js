@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, StatusBar, TouchableOpacity } from 'react-native';
+import { View, StatusBar, TouchableOpacity, StyleSheet } from 'react-native';
+import Maps from '../components/Maps';
 import { Icon, Text } from 'react-native-elements';
 import { Fonts, Colors } from '../constants';
 
@@ -7,7 +8,7 @@ class TicketView extends Component {
     static navigationOptions = ({ navigation }) => ({
             title: 'SEGRETERIA',
             headerStyle: {
-              height: 95,
+              height: 60,
               headerLayoutPreset: 'center',
               backgroundColor: navigation.getParam('colore')
             },
@@ -17,13 +18,14 @@ class TicketView extends Component {
                 fontWeight: '200',
                 color: Colors.white,
                 fontSize: 15,
-                paddingTop: 60
+                paddingTop: 20
             },
             headerRight: (
                 <View style={{ paddingRight: 20 }}>
                     <StatusBar
                         backgroundColor={navigation.getParam('colore')}
                         barStyle="light-content"
+                        animated
                     />
                     <TouchableOpacity onPress={() => navigation.openDrawer()}>
                     <Icon
@@ -69,6 +71,7 @@ class TicketView extends Component {
                     <Text style={{ color: 'black', fontFamily: Fonts.TextBold }}>DETTAGLI UFFICIO</Text>
                   </View>
                 </TouchableOpacity>
+                <Maps />
                 <TouchableOpacity style={buttonBottomStyle}>
                   <View style={{ ...buttonBottomStylebtn, backgroundColor: colore }}>
                       <Icon

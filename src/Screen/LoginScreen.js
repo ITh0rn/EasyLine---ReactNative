@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Image, Text, View, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { Image, Text, View, TouchableOpacity, ActivityIndicator, TextInput } from 'react-native';
 import { Input } from 'react-native-elements';
-import { Fonts } from '../constants';
+import { Fonts, Colors } from '../constants';
 
 class LoginScreen extends Component {
     changeValueText(key, value) {
@@ -27,43 +27,31 @@ class LoginScreen extends Component {
                     />
                 </View>
                 <Text style={textStyle}>Accedi con le credenziali della segreteria virtuale di Univaq</Text>
-                <Input
-                    value={email}
-                    placeholder={'Username'}
-                    inputType={Text}
-                    autoCorrect={false}
-                    style={{ marginBottom: 30, alignItems: 'center' }}
-                    inputContainerStyle={containerStyle}
-                    inputStyle={inputStyle}
-                    leftIcon={{ type: 'font-awesome', name: 'user', color: '#FFF' }}
-                    keyboardAppearance='light'
-                    autoFocus={false}
-                    autoCapitalize='none'
-                    keyboardType='email-address'
-                    returnKeyType='next'
-                    placeholderTextColor='#FFF'
-                    onChangeText={(value) => this.changeValueText('email', value)}
+                <TextInput
+                  value={email}
+                  style={{ height: 50, width: '100%', marginTop: 10, backgroundColor: '#CD3335', color: Colors.white, fontFamily: Fonts.TextReg }}
+                  placeholderTextColor='white'
+                  placeholder={'Username'}
+                  inputStyle={{ Color: 'white', fontFamily: Fonts.TextReg }}
+                  onChangeText={(value) => this.changeValueText('email', value)}
+                  leftIcon={{ type: 'font-awesome', name: 'user', color: '#FFF' }}
                 />
-                <Input
-                    value={password}
-                    placeholder={'Password'}
-                    inputType={Text}
-                    autoCorrect={false}
-                    secureTextEntry
-                    inputContainerStyle={containerStyle}
-                    style={{ marginBottom: 30, height: 30 }}
-                    inputStyle={inputStyle}
-                    leftIcon={{ type: 'font-awesome', name: 'lock', color: '#FFF' }}
-                    placeholderTextColor='#FFF'
-                    onChangeText={(value) => this.changeValueText('password', value)}
+                <TextInput
+                  value={password}
+                  style={{ height: 50, width: '100%', marginTop: 5, backgroundColor: '#CD3335', color: Colors.white, fontFamily: Fonts.TextReg }}
+                  placeholderTextColor='white'
+                  placeholder={'Password'}
+                  inputStyle={{ Color: 'white', fontFamily: Fonts.TextReg }}
+                  onChangeText={(value) => this.changeValueText('password', value)}
+                  secureTextEntry
                 />
-                <Text style={{ color: '#FFF', width: 220, fontFamily: Fonts.TextReg }}>{error}</Text>
-                {isLoading && <ActivityIndicator color='white' />}
-                <TouchableOpacity onPress={() => this.login()} style={{ width: '80%' }}>
+                <TouchableOpacity onPress={() => this.login()} style={{ width: '100%' }}>
                   <View style={buttonStyle}>
                     <Text style={{ color: 'white', fontFamily: Fonts.TextReg, fontSize: 15 }}>ACCEDI</Text>
                   </View>
                 </TouchableOpacity>
+                <Text style={{ color: '#FFF', width: 220, fontFamily: Fonts.TextReg, textAlign: 'center' }}>{error}</Text>
+                {isLoading && <ActivityIndicator color='white' />}
             </View>
         );
     }
@@ -77,7 +65,6 @@ const style = {
         backgroundColor: '#901100',
         flexDirection: 'column',
         alignItems: 'center',
-        paddingHorizontal: 5
     },
     textStyle: {
         color: '#a8a8a8',
@@ -101,15 +88,12 @@ const style = {
         marginVertical: 10,
     },
     buttonStyle: {
-        height: 35,
+        height: 50,
         width: '100%',
         marginTop: 10,
-        backgroundColor: '#cc0000',
+        backgroundColor: '#C90101',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 10,
-        borderWidth: 0.8,
-        borderColor: '#b30000'
     }
 };
 
